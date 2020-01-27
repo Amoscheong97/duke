@@ -50,6 +50,9 @@ public class Duke {
 
             String expression = arr[0];
 
+            // Using switch statement to find the suitable
+            // objects for the strings to be parsed into.
+            // Add the new object into the list of tasks
             switch (expression) {
                 case "[E]" :
                     listOfTask.add(new Event(arr[1], arr[2]));
@@ -70,6 +73,12 @@ public class Duke {
         String line = "";
         BufferedWriter writer = new BufferedWriter(new FileWriter(
                 "C:\\Users\\SOHNB101\\Documents\\myduke\\duke\\data\\duke.txt"));
+
+        // Save tasks into Duke.txt file
+        // Save information into the form :
+        // [Task type (Event or Deadline)] [Description of Task] [Date of Task]
+        // OR
+        // [Todo] [Description of Todo]
         for (Task task : listOfTask) {
             if (task.getType().equals("[T]")) {
                 line = "[T] " + task.getDesc();
